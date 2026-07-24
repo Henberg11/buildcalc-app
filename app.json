@@ -32,8 +32,9 @@
     ],
     "extra": {
       "eas": {
-        "projectId": "REPLACE_WITH_YOUR_EAS_PROJECT_ID"
+        "projectId": "29c9cd6c-8d36-44e3-a1e1-8e465c6e4261"
       }
-    }
+    },
+    "owner": "henberg11"
   }
 }
