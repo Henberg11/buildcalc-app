@@ -3,6 +3,7 @@ import { StatusBar } from "expo-status-bar";
 import mobileAds from "react-native-google-mobile-ads";
 import HomeScreen from "./src/HomeScreen";
 import CalculatorScreen from "./src/CalculatorScreen";
+import { PremiumProvider } from "./src/premium";
 
 export default function App() {
   const [selected, setSelected] = useState(null);
@@ -16,13 +17,13 @@ export default function App() {
   }, []);
 
   return (
-    <>
+    <PremiumProvider>
       <StatusBar style="light" />
       {selected ? (
         <CalculatorScreen calculator={selected} onBack={() => setSelected(null)} />
       ) : (
         <HomeScreen onSelect={setSelected} />
       )}
-    </>
+    </PremiumProvider>
   );
 }
