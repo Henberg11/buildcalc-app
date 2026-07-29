@@ -1,12 +1,16 @@
 import React from "react";
 import { View, Text, FlatList, TouchableOpacity, StyleSheet, SafeAreaView } from "react-native";
 import { CALCULATORS } from "./calculators";
+import RemoveAdsButton from "./RemoveAdsButton";
 
 export default function HomeScreen({ onSelect }) {
   return (
     <SafeAreaView style={styles.safe}>
       <View style={styles.header}>
-        <Text style={styles.headerTitle}>BuildCalc</Text>
+        <View style={styles.headerTop}>
+          <Text style={styles.headerTitle}>BuildCalc</Text>
+          <RemoveAdsButton />
+        </View>
         <Text style={styles.headerSubtitle}>Trade & DIY calculators, all in one place</Text>
       </View>
       <FlatList
@@ -35,6 +39,11 @@ const styles = StyleSheet.create({
     paddingTop: 24,
     paddingBottom: 20,
     paddingHorizontal: 20,
+  },
+  headerTop: {
+    flexDirection: "row",
+    alignItems: "center",
+    justifyContent: "space-between",
   },
   headerTitle: { fontSize: 28, fontWeight: "700", color: "#fff" },
   headerSubtitle: { fontSize: 14, color: "#CBD8E6", marginTop: 4 },
